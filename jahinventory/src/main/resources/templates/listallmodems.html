@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List all modems</title>
+</head>
+<body>
+ <h1>List all modems in DB</h1>
+
+<br>
+
+
+ <th:block th:each="modem : ${allmodems}" >
+     <span th:text="${modem.id}" >Modem ID</span>
+     <span th:text="${modem.name}" >Modem name</span>
+     <span th:text="${modem.modelnumber}" >model number</span>
+     <span th:text="${modem.type}" >model type</span>
+     <span th:text="${modem.versionnumber}" >version number</span>
+     <br>
+     <br>
+ </th:block>
+<br>
+<br>
+ <a th:href="@{/inv/addmodem}">Back to Add Modem form</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Modem</title>
+</head>
+<body>
+ <h1>Add new Modem, type, model</h1>
+<br>
+<form th:action="@{/inv/addmodem-form}" th:object="${modemobject}" method="post">
+    <label for="modelname">Model Name:</label>
+    <input type="text" id="modelname" name="name">
+    <br>
+    <label for="modelnumber">Model Number:</label>
+    <input type="text" id="modelnumber" name="modelnumber">
+    <br>
+    <label for="modeltype">Model Type:</label>
+    <input type="text" id="modeltype" name="type">
+    <br>
+
+    <!-- for the drop down list -->
+    <label for="versiondrop" >Select a version number:</label>
+    <select id="versiondrop" th:field="*{versionnumber}">
+        <option value="">--- Select ---</option>
+
+        <!-- Loop through the versions sent from the controller -->
+        <option th:each="ver : ${versions}"
+                th:value="${ver}"
+                th:text="${ver}">
+        </option>
+
+    </select>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

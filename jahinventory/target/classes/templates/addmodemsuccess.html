@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <h1> Success Adding modem</h1>
+
+ <h2>Form Submitted Successfully!</h2>
+ <p><strong>Name:</strong> <span th:text="${submittedData.name}"></span></p>
+ <p><strong>Model Number</strong> <span th:text="${submittedData.modelnumber}"></span></p>
+ <p><strong>type</strong> <span th:text="${submittedData.type}"></span></p>
+ <p><strong>version number</strong> <span th:text="${submittedData.versionnumber}"></span></p>
+
+ <a th:href="@{/inv/addmodem}">Back to form</a>
+<br>
+ <a th:href="@{/inv/listmodems}">List All Modems</a>
+
+</body>
+</html>
